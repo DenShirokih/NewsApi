@@ -11,8 +11,12 @@ body {
   font-size: $primary-fs;
   line-height: 17px;
   color: map-get($colors, primary-color);
+  
 }
 
+li {
+  list-style: none;
+}
 img {
   display: block;
   max-width: 100%;
