@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: $primary-fs;
+  line-height: 17px;
+  color: map-get($colors, primary-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+}

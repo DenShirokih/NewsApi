@@ -1,1 +1,20 @@
-@import './components/example';
+@import '/src/styles/normalize';
+
+@import 'helpers/_variables';
+@import 'helpers/_mixins.scss';
+@import 'helpers/_placeholder';
+
+// Helpers
+
+@import './helpers/base';
+
+// Main layout
+
+@import './layout/header';
+@import './layout/main';
+@import './layout/footer';
+
+// Components
+
+// @import './components/team-card';
+@import './components/burger';
