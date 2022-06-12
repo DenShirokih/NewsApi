@@ -12,15 +12,10 @@
   </head>
   <body>
     <div class="container">
-      <!-- Так добавляются фрагменты в главные HTML-файлы страниц. Находятся в папке src/partials -->
       {{> header }}
       <div class="container-cards">
-        <ul class="cards__list">
-          {{> primary-card}} {{> item-card }} {{> item-card }} {{> item-card }}
-          {{> item-card }} {{> item-card }} {{> item-card }}
-        </ul>
+          {{> opened-article }}
       </div>
-      {{> button-scroll-to-top}}
     </div>
     {{> footer}}
   </body>
