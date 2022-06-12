@@ -1,24 +1,22 @@
 .articles {
-  display: flex;
-  background-color: #ffffff;
-  width: 300px;
-  flex-direction: column;
+  max-width: 300px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
 }
 
 .card-img {
-  width: 300px;
   height: 179px;
+  margin-bottom: 18px;
 }
 
 .card-content {
-  padding-top: 18px;
+
   padding-left: 16px;
-  width: 258px;
+  max-width: 258px;
 }
 
 .card-header {
+  margin-bottom: 15px;
   font-weight: 700;
   font-size: $secondary-fs;
   line-height: 24.2px;
@@ -26,7 +24,7 @@
 }
 
 .card-text {
-  padding-top: 22px;
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: $primary-fs;
   line-height: 16.94px;
@@ -34,16 +32,15 @@
 }
 
 .card-time {
-  padding-top: 22px;
-  padding-bottom: 22px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 24px;
 }
 
 .card-time p {
   font-weight: 400;
   font-size: $thirdly-fs;
-  line-height: 14.52px;
+  line-height: 14px;
   color: #718096;
 }
 
