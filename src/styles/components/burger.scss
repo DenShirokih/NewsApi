@@ -62,4 +62,9 @@ input[type='checkbox']:checked {
 
 #burger:checked ~ .site-navigation-menu {
   font-size: $primary-fs;
+  display: flex;
 }
+
+// #burfer:checked ~ .dropdown-menu:hover {
+//   color: map-get($colors, link-color);
+// }

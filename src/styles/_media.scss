@@ -1,4 +1,4 @@
-@use 'sass:map';
+// @use 'sass:map';
 
 $media-breakpoints: (
   xs: 430px,
@@ -9,30 +9,30 @@ $media-breakpoints: (
   xl: 1920px,
 );
 
-@mixin respond-above($media) {
-  $breakpoint: map.get($media-breakpoints, $media);
+// @mixin respond-above($media) {
+//   $breakpoint: map.get($media-breakpoints, $media);
 
-  @if $breakpoint {
-    @media (min-width: ($breakpoint)) {
-      @content;
-    }
-  } @else {
-    @media (min-width: ($media)) {
-      @content;
-    }
-  }
-}
+//   @if $breakpoint {
+//     @media (min-width: ($breakpoint)) {
+//       @content;
+//     }
+//   } @else {
+//     @media (min-width: ($media)) {
+//       @content;
+//     }
+//   }
+// }
 
-@mixin respond-to($media) {
-  $breakpoint: map.get($media-breakpoints, $media);
+// @mixin respond-to($media) {
+//   $breakpoint: map.get($media-breakpoints, $media);
 
-  @if $breakpoint {
-    @media (max-width: ($breakpoint - 1)) {
-      @content;
-    }
-  } @else {
-    @media (max-width: ($media - 1)) {
-      @content;
-    }
-  }
-}
+//   @if $breakpoint {
+//     @media (max-width: ($breakpoint - 1)) {
+//       @content;
+//     }
+//   } @else {
+//     @media (max-width: ($media - 1)) {
+//       @content;
+//     }
+//   }
+// }
