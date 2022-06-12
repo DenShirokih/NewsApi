@@ -1,0 +1,21 @@
+.button-scroll{
+    cursor: pointer;
+    float: right;
+    background-color: map-get($colors, link-color );
+    min-width: 141px;
+    min-height: 37px;
+    margin-bottom: 60px;
+    border-radius: 5px;
+    border: none;
+    font-size: $last-one-fs;
+    line-height: 19px;
+    font-weight: 700;
+    color: #fff;
+}
+.button-item{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px; 
+    justify-content: space-between;
+}
