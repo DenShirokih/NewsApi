@@ -18,7 +18,7 @@
 .card-header {
   margin-bottom: 15px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: $secondary-fs;
   line-height: 24.2px;
   color: #2d3748;
 }
@@ -26,7 +26,7 @@
 .card-text {
   margin-bottom: 20px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: $primary-fs;
   line-height: 16.94px;
   color: #718096;
 }
@@ -39,14 +39,14 @@
 
 .card-time p {
   font-weight: 400;
-  font-size: 12px;
+  font-size: $thirdly-fs;
   line-height: 14px;
   color: #718096;
 }
 
 .card-time a {
   font-weight: 700;
-  font-size: 12px;
+  font-size: $thirdly-fs;
   line-height: 14.52px;
   color: #2d3748;
   text-decoration: none;
