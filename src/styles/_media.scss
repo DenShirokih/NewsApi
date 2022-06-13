@@ -1,38 +1,37 @@
-// @use 'sass:map';
+// @media (min-width: 768px) {
+//   .container {
+//     min-width: 740px;
+//   }
 
-$media-breakpoints: (
-  xs: 430px,
-  sm: 600px,
-  md: 900px,
-  xm: 1200px,
-  lg: 1536px,
-  xl: 1920px,
-);
+//   .site-navigation {
+//     justify-content: flex-start;
+//     padding: 15px 0px 43px 0px;
+//     flex-direction: row;
+//   }
 
-// @mixin respond-above($media) {
-//   $breakpoint: map.get($media-breakpoints, $media);
+//   .site-navigation-aside {
+//     @include display(flex, start, center);
+//     flex-basis: 50%;
+//   }
 
-//   @if $breakpoint {
-//     @media (min-width: ($breakpoint)) {
-//       @content;
-//     }
-//   } @else {
-//     @media (min-width: ($media)) {
-//       @content;
-//     }
+//   .site-navigation-menu {
+//     @include display(none, start, center);
+//   }
+
+//   .site-navigation__input {
+//     height: 32px;
+//   }
+//   .site-navigation__logo {
+//     flex-basis: 35%;
+//   }
+
+//   .site-navigation__categories {
+//     margin-right: 90px;
 //   }
 // }
 
-// @mixin respond-to($media) {
-//   $breakpoint: map.get($media-breakpoints, $media);
-
-//   @if $breakpoint {
-//     @media (max-width: ($breakpoint - 1)) {
-//       @content;
-//     }
-//   } @else {
-//     @media (max-width: ($media - 1)) {
-//       @content;
-//     }
+// @media (min-width: 1140px) {
+//   .container {
+//     min-width: 1020px;
 //   }
 // }

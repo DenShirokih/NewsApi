@@ -10,8 +10,9 @@ $colors: (
   thridly-color: #000000,
   last-one-color: #f2f2f2,
   link-color: #2f80ed,
-  border-footer-color: #E8E8E8,
-  border-color: #E5E5E5,
+  border-footer-color: #e8e8e8,
+  border-color: #e5e5e5,
+  white-color: #ffffff,
 );
 
 // font-size
@@ -26,3 +27,7 @@ $last-one-fs: 16px;
 // bck-gradient
 
 // font-wieght
+
+$primary-fw: 300;
+$secondary-fw: 400;
+$bold-fw: 700;

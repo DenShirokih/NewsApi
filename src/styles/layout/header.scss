@@ -1,31 +1,68 @@
 .site-navigation {
-  @include display(flex, start, center);
-  padding: 15px 0px 43px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px 43px 0px;
+  @media (min-width: 768px) {
+    padding: 15px 0px 43px 0px;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .site-navigation-aside {
-  @include display(flex, start, center);
-  flex-basis: 50%;
+  @media (min-width: 768px) {
+    @include display(flex, start, center);
+    flex-basis: 60%;
+  }
 }
 
 .site-navigation-menu {
-  @include display(none, start, center);
-  flex-basis: 75%;
-  font-size: 0;
+  flex-basis: 85%;
+  display: flex;
   transition: 0.3s all;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 30px;
+  }
+  @media (min-width: 1140px) {
+    justify-content: space-around;
+    padding-left: 0;
+  }
+}
+
+#burger:checked ~ .site-navigation-menu {
+  font-size: 18px;
+  @media (min-width: 768px) {
+    font-size: $primary-fs;
+  }
 }
 
 .site-navigation__input {
   width: 320px;
-  height: 32px;
+  height: 40px;
   padding-left: 48px;
   border: none;
   background-color: map-get($colors, last-one-color);
   border-radius: 5px;
+  @media (min-width: 768px) {
+    height: 30px;
+  }
 }
 
 .site-navigation__logo {
-  flex-basis: 35%;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 35px;
+  @media (min-width: 768px) {
+    flex-basis: 35%;
+    font-size: $secondary-fs;
+    margin-bottom: 0;
+  }
 }
 
 .link {
@@ -33,32 +70,66 @@
 }
 
 .site-navigation__input::placeholder {
-  color: black;
-  font-size: $primary-fs;
+  color: map-get($colors, thridly-color);
+  font-size: 16px;
+  @media (min-width: 768px) {
+    font-size: $primary-fs;
+  }
 }
 
 .site-navigation__categories {
-  margin-right: 90px;
   position: relative;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    text-transform: none;
+  }
 }
 
 .site-navigation__categories:hover > .dropdowm-menu {
   display: block;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(#f2f2f2, 1);
+  @media (min-width: 768px) {
+    background-color: map-get($colors, white-color);
+  }
 }
 
 .site-navigation-form {
   position: relative;
+  margin-bottom: 30px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .site-navigation__img {
   position: absolute;
-  top: 7px;
-  left: 19px;
+  top: 12px;
+  left: 20px;
+  @media (min-width: 768px) {
+    top: 8px;
+  }
 }
 
 .site-navigation__trending {
-  flex-basis: 40%;
+  text-transform: uppercase;
+  position: relative;
+  @media (min-width: 768px) {
+    text-transform: none;
+  }
+}
+
+.site-navigation__trending::before {
+  content: url('/img/icons/lightning.svg');
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  visibility: hidden;
+}
+
+#burger:checked > .site-navigation__trending:before {
+  visibility: visible;
 }
 
 .site-navigation__link {
@@ -71,8 +142,9 @@
 }
 
 .dropdowm-menu {
-  height: 115px;
-  min-width: 210px;
+  text-align: center;
+  font-size: 16px;
+  min-width: 100vw;
   position: absolute;
   left: 50%;
   top: 30px;
@@ -82,21 +154,36 @@
   transform: translateX(-50%);
   display: none;
   background-color: rgba(255, 255, 255, 0);
+  @media (min-width: 768px) {
+    text-align: unset;
+    min-width: 210px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 115px;
+    font-size: $primary-fs;
+  }
 }
 
 .dropdown-menu__item {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  height: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 .dropdown-menu__list {
-  line-height: 21px;
+  line-height: 25px;
+  border-bottom: 1px solid;
+  @media (min-width: 768px) {
+    border: none;
+    line-height: 20px;
+  }
 }
 
-.dropdown-menu__list:nth-child(odd) {
-  margin-right: 48px;
+.dropdown-menu__list:nth-last-child(-n + 1) {
+  border: none;
 }
 
 .dropdowm-menu:before {
@@ -108,7 +195,8 @@
   width: 7px;
   height: 7px;
   box-shadow: -1px -1px 1px #bdbdbd;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(#f2f2f2, 1);
+  @media (min-width: 768px) {
+    background-color: map-get($colors, white-color);
+  }
 }
-
-// @media (min-wigth);

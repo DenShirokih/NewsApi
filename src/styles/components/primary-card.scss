@@ -1,51 +1,79 @@
 .primary-card {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 1140px) {
+    display: block;
+  }
 }
 .primary-articles {
-  display: flex;
-  flex-direction: row-reverse;
+  // display: inline-block;
+  max-width: 350px;
   box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
   border: 1px solid map-get($colors, border-color);
-  justify-content: space-between;
+  // justify-content: space-between;
   border-radius: 5px;
+  @media (min-width: 768px) {
+    max-width: 457px;
+  }
+  @media (min-width: 1140px) {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 100%;
+    justify-content: center;
+  }
 }
 .primary-card__img {
   height: 230px;
+  margin-bottom: 18px;
+  @media (min-width: 1140px) {
+    margin: 0;
+  }
 }
 .primary-card__content {
-  flex-basis: 47%;
-  padding-top: 41px;
-  padding-left: 57px;
+  // flex-basis: 47%;
+  // padding-top: 41px;
+  margin: 0 auto;
+  padding-left: 16px;
+  // max-width: 315px;
+  padding-right: 15px;
+  @media (min-width: 768px) {
+    padding-right: 15px;
+  }
+  @media (min-width: 1140px) {
+    padding: 40px 57px 40px 40px;
+  }
 }
 .primary-card__header {
-  margin-bottom: 30px;
-  font-weight: 700;
+  margin-bottom: 15px;
+  font-weight: $bold-fw;
   font-size: 20px;
-  line-height: 24.2px;
+  line-height: 24px;
   color: #2d3748;
 }
 .primary-card__text {
-  margin-bottom: 30px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.94px;
-  color: #718096;
+  margin-bottom: 15px;
+  font-weight: $secondary-fw;
+  font-size: $primary-fs;
+  line-height: 17px;
+  color: map-get($colors, primary-color);
 }
 .primary-card__time {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 24px;
 }
 .primary-card__time p {
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: $secondary-fw;
+  font-size: $thirdly-fs;
   line-height: 14px;
-  color: #718096;
+  color: map-get($colors, primary-color);
 }
 
 .primary-card__time a {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14.52px;
-  color: #2d3748;
+  font-weight: $bold-fw;
+  font-size: $thirdly-fs;
+  line-height: 15px;
+  color: map-get($colors, thridly-color);
   text-decoration: none;
 }

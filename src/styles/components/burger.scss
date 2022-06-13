@@ -1,23 +1,41 @@
 .burger-menu {
   display: flex;
-  flex-direction: row-reverse;
-  flex-basis: 50%;
+  flex-direction: column;
   align-items: center;
+  @media (min-width: 768px) {
+    flex-basis: 40%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
 
 .burger {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   z-index: 1;
+  margin-bottom: 30px;
   &__item {
     position: absolute;
     height: 2px;
+    width: 50px;
+    background: map-get($colors, thridly-color);
+  }
+}
+
+.burger {
+  @media (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.burger__item {
+  @media (min-width: 768px) {
     width: 18px;
-    background: #000;
-    transition: 0.15s all cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
@@ -46,25 +64,22 @@ input[type='checkbox']:checked {
   position: absolute;
   content: '';
   height: 2px;
-  width: 18px;
+  width: 50px;
   top: 7px;
   background: #000;
+  @media (min-width: 768px) {
+    width: 18px;
+  }
 }
 
 .first::before {
   position: absolute;
   content: '';
   height: 2px;
-  width: 18px;
+  width: 50px;
   bottom: 7px;
   background: #000;
+  @media (min-width: 768px) {
+    width: 18px;
+  }
 }
-
-#burger:checked ~ .site-navigation-menu {
-  font-size: $primary-fs;
-  display: flex;
-}
-
-// #burfer:checked ~ .dropdown-menu:hover {
-//   color: map-get($colors, link-color);
-// }
