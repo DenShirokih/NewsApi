@@ -21,3 +21,9 @@
     padding-block-start: calc(100% / #{$ratio});
   }
 }
+
+@mixin display($display, $justify-content, $align-items) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

@@ -1,19 +1,23 @@
 .footer-wrapper {
-    width: 100%;
-    border-top: 1px solid map-get($colors, border-footer-color);
+  width: 100%;
+  border-top: 1px solid map-get($colors, border-footer-color);
+  height: 60px;
 }
-.footer{
-    padding-top: 19px;
-    padding-bottom: 18px;
+.footer {
+  line-height: 60px;
 }
-.copiright{
-    font-weight: 400;
-    font-size: $last-one-fs;
-    color: map-get($colors, thridly-color);
+.copiright {
+  text-align: center;
+  font-weight: $secondary-fw;
+  font-size: $primary-fs;
+  color: map-get($colors, thridly-color);
+  @media (min-width: 1140px) {
+    text-align: start;
+  }
 }
-.copiright-logo{
-    font-weight: 700;
-    font-size: $last-one-fs;
-    color: map-get($colors, thridly-color);
-    text-decoration: none;
+.copiright-logo {
+  font-weight: $bold-fw;
+  font-size: $last-one-fs;
+  color: map-get($colors, thridly-color);
+  text-decoration: none;
 }

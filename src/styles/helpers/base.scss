@@ -23,6 +23,12 @@ ul {
 }
 
 .container {
-  max-width: 1020px;
+  width: 320px;
   margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 740px;
+  }
+  @media (min-width: 1140px) {
+    width: 1020px;
+  }
 }
