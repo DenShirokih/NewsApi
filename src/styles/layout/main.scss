@@ -32,17 +32,17 @@
   margin-bottom: 0;
 }
 
+.link-gaps:nth-last-child(-n + 2) {
+  @media (min-width: 768px) {
+    margin-bottom: 0px;
+  }
+}
+
 .link-gaps:nth-last-child(-n + 3) {
   @media (min-width: 768px) {
     margin-bottom: 30px;
   }
   @media (min-width: 1140px) {
     margin-bottom: 0;
-  }
-}
-
-.link-gaps:nth-last-child(-n + 2) {
-  @media (min-width: 768px) {
-    margin-bottom: 0px;
   }
 }
