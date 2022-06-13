@@ -7,7 +7,33 @@
     margin:auto;
 }
 .article-header h2{
-    font-size: 45px;
+    font-size: $article-header-h2-fs;
     color:#2D3748;
-    margin-bottom: 19px;
+    margin-bottom: 35px;
+    
+}
+.article-card__time{
+    display: flex;
+    padding-bottom: 30px;
+    margin-bottom: 37px;
+    border-bottom: 1px solid map-get($colors, border-color);
+}
+.article-author{
+    font-weight: 700;
+    font-size: $article-author-fs;
+    line-height: 22px;
+    color: map-get($colors, article-author);
+    padding-right: 25px;
+
+}
+.article-date{
+    font-style: normal;
+    font-weight: 400;
+    font-size: $article-author-fs;
+    line-height: 22px;
+}
+.article-text p {
+    padding-bottom: 58px;
+    font-size: $last-one-fs;
+    line-height: 19px;
 }
