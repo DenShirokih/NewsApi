@@ -24,6 +24,9 @@
 }
 
 .card-text {
+  // overflow: auto;
+  // text-overflow: ellipsis;
+  // max-height: 85px;
   margin-bottom: 20px;
   font-weight: 400;
   font-size: $primary-fs;
