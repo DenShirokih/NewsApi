@@ -8,6 +8,54 @@
     flex-direction: row;
     align-items: center;
   }
+  &__input {
+    width: 320px;
+    height: 40px;
+    padding-left: 48px;
+    border: none;
+    background-color: map-get($colors, last-one-color);
+    border-radius: 5px;
+    @media (min-width: 768px) {
+      height: 30px;
+    }
+  }
+  &__logo {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 35px;
+    @media (min-width: 768px) {
+      flex-basis: 35%;
+      font-size: $secondary-fs;
+      margin-bottom: 0;
+    }
+  }
+  &__categories {
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      text-transform: none;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    @media (min-width: 768px) {
+      top: 8px;
+    }
+  }
+  &__trending {
+    text-transform: uppercase;
+    position: relative;
+    @media (min-width: 768px) {
+      text-transform: none;
+    }
+  }
+  &__link {
+    padding-bottom: 15px;
+  }
 }
 
 .site-navigation-aside {
@@ -35,33 +83,10 @@
   }
 }
 
-#burger:checked ~ .site-navigation-menu {
+.burger-checkbox[type='checkbox']:checked ~ .site-navigation-menu {
   font-size: 18px;
   @media (min-width: 768px) {
     font-size: $primary-fs;
-  }
-}
-
-.site-navigation__input {
-  width: 320px;
-  height: 40px;
-  padding-left: 48px;
-  border: none;
-  background-color: map-get($colors, last-one-color);
-  border-radius: 5px;
-  @media (min-width: 768px) {
-    height: 30px;
-  }
-}
-
-.site-navigation__logo {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 35px;
-  @media (min-width: 768px) {
-    flex-basis: 35%;
-    font-size: $secondary-fs;
-    margin-bottom: 0;
   }
 }
 
@@ -77,17 +102,7 @@
   }
 }
 
-.site-navigation__categories {
-  position: relative;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-    text-transform: none;
-  }
-}
-
-.site-navigation__categories:hover > .dropdowm-menu {
+.site-navigation__categories:hover > .dropdown-menu {
   display: block;
   background-color: rgba(#f2f2f2, 1);
   @media (min-width: 768px) {
@@ -103,23 +118,6 @@
   }
 }
 
-.site-navigation__img {
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  @media (min-width: 768px) {
-    top: 8px;
-  }
-}
-
-.site-navigation__trending {
-  text-transform: uppercase;
-  position: relative;
-  @media (min-width: 768px) {
-    text-transform: none;
-  }
-}
-
 .site-navigation__trending::before {
   content: url('/img/icons/lightning.svg');
   position: absolute;
@@ -128,12 +126,10 @@
   visibility: hidden;
 }
 
-#burger:checked > .site-navigation__trending:before {
+.burger-checkbox[type='checkbox']:checked
+  ~ .site-navigation-menu
+  > .site-navigation__trending:before {
   visibility: visible;
-}
-
-.site-navigation__link {
-  padding-bottom: 15px;
 }
 
 .site-navigation__link:hover,
@@ -141,7 +137,7 @@
   color: map-get($colors, link-color);
 }
 
-.dropdowm-menu {
+.dropdown-menu {
   text-align: center;
   font-size: 16px;
   min-width: 100vw;
@@ -154,6 +150,7 @@
   transform: translateX(-50%);
   display: none;
   background-color: rgba(255, 255, 255, 0);
+  z-index: 2;
   @media (min-width: 768px) {
     text-align: unset;
     min-width: 210px;
@@ -162,23 +159,21 @@
     height: 115px;
     font-size: $primary-fs;
   }
-}
-
-.dropdown-menu__item {
-  @media (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
+  &__item {
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 100%;
+    }
   }
-}
-
-.dropdown-menu__list {
-  line-height: 25px;
-  border-bottom: 1px solid;
-  @media (min-width: 768px) {
-    border: none;
-    line-height: 20px;
+  &__list {
+    line-height: 25px;
+    border-bottom: 1px solid;
+    @media (min-width: 768px) {
+      border: none;
+      line-height: 20px;
+    }
   }
 }
 
@@ -186,7 +181,7 @@
   border: none;
 }
 
-.dropdowm-menu:before {
+.dropdown-menu:before {
   content: '';
   position: absolute;
   top: -3px;

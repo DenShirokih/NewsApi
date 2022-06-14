@@ -17,25 +17,19 @@
   height: 50px;
   z-index: 1;
   margin-bottom: 30px;
-  &__item {
-    position: absolute;
-    height: 2px;
-    width: 50px;
-    background: map-get($colors, thridly-color);
-  }
-}
-
-.burger {
   @media (min-width: 768px) {
     width: 30px;
     height: 30px;
     margin-bottom: 0;
   }
-}
-
-.burger__item {
-  @media (min-width: 768px) {
-    width: 18px;
+  &__item {
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background: map-get($colors, thridly-color);
+    @media (min-width: 768px) {
+      width: 18px;
+    }
   }
 }
 
