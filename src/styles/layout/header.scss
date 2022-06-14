@@ -135,6 +135,7 @@
 .site-navigation__link:hover,
 .dropdown-menu__link:hover {
   color: map-get($colors, link-color);
+  
 }
 
 .dropdown-menu {
@@ -153,7 +154,7 @@
   z-index: 2;
   @media (min-width: 768px) {
     text-align: unset;
-    min-width: 210px;
+    min-width: 230px;
     flex-direction: column;
     flex-wrap: wrap;
     height: 115px;
@@ -170,6 +171,7 @@
   &__list {
     line-height: 25px;
     border-bottom: 1px solid;
+    margin-right: 30px;
     @media (min-width: 768px) {
       border: none;
       line-height: 20px;
@@ -177,6 +179,9 @@
   }
 }
 
+.dropdown-menu__list:nth-last-child(-n + 4) {
+  margin-right: 0;
+}
 .dropdown-menu__list:nth-last-child(-n + 1) {
   border: none;
 }
