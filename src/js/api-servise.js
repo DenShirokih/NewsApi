@@ -1,15 +1,17 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://newsapi.org/v2/';
-const KEY = 'e5b74ef942424359907db3fcd031473c';
+const KEY = '42f37e3a97114a25a54e6b53dab9d050';
+
 const EXCLUDEDOMAINS =
-  'excludeDomains=ura.news,vesti.ru,ixbt.com,gazeta.ru,exler.ru,news.pn,lenta.ru,rg.ru,vz.ru,meduza.io,livejournal.com,vedomosti.ru,techinsider.ru';
+  'excludeDomains=news2.ru,sputniknews.com,news.google.com,klops.ru,shakin.ru,cnews.ru,sportmail.ru,seonews.ru,mail.ru,yandex.ru,life.ru,kommersant.ru,tass.ru,vesti.ru,ixbt.com,gazeta.ru,exler.ru,news.pn,lenta.ru,rg.ru,vz.ru,meduza.io,livejournal.com,vedomosti.ru,techinsider.ru';
 export default {
   searchArt: '',
   page: 1,
   isLoading: false,
   NewsSearch() {
-    const filter = `everything?&q=${this.query}&${EXCLUDEDOMAINS}&pageSize=7
-    &page=${this.page}&apiKey=${KEY}`;
+    const filter = `everything?&${EXCLUDEDOMAINS}&q=${this.query}&pageSize=7
+    &page=${this.page}&searchIn=title,description&sortBy=publishedAt&apiKey=${KEY}`;
+
     return axios
       .get(`${filter}`)
       .then(response => response.data.articles)
@@ -26,6 +28,70 @@ export default {
         this.isLoading = false;
       });
   },
+  SportNews() {
+    const filterNews = `top-headlines?country=ua&category=sports&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  HealthNews() {
+    const filterNews = `top-headlines?country=ua&category=health&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  GeneralNews() {
+    const filterNews = `top-headlines?country=ua&category=general&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  BusinessNews() {
+    const filterNews = `top-headlines?country=ua&category=business&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  ScienceNews() {
+    const filterNews = `top-headlines?country=ua&category=science&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  TechnologyNews() {
+    const filterNews = `top-headlines?country=ua&category=technology&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+  EntertainmentNews() {
+    const filterNews = `top-headlines?country=ua&category=entertainment&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    return axios
+      .get(`${filterNews}`)
+      .then(response => response.data.articles)
+      .finally(() => {
+        this.isLoading = false;
+      });
+  },
+
   resetPage() {
     this.page = 1;
   },
