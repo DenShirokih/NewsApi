@@ -9,16 +9,17 @@
 }
 
 .card-img {
-  height: 179px;
+  height: 150px;
   margin-bottom: 18px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-  max-height: 180px;
+  max-height: 203px;
   padding-left: 16px;
   max-width: 280px;
+  // flex: 1 1 auto;
 }
 
 .card-header {
@@ -30,13 +31,29 @@
 }
 
 .card-text {
-  max-height: 35px;
   font-weight: $secondary-fw;
   font-size: $primary-fs;
   line-height: 17px;
   color: map-get($colors, primary-color);
   overflow: hidden;
-  text-overflow: ellipsis;
+  max-height: 85px;
+  position: relative;
+}
+
+.card-text::after {
+  content: '';
+  width: 100%;
+  height: 17px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 1)
+  );
 }
 
 .card-time {
