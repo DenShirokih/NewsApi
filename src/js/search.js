@@ -2,6 +2,7 @@ import apiservise from './api-servise';
 import refs from './refs';
 import dropDownMenu from './drop-down-menu';
 import fetchSucsess from './fetchSucsess';
+import scrollUp from './scroll-up';
 
 const submitForm = event => {
   event.preventDefault();
