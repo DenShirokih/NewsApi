@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
     "handlebars": "^4.7.7"
   }
 }

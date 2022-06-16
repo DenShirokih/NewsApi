@@ -11,16 +11,15 @@ const submitForm = event => {
   apiservise
     .NewsSearch()
     .then(fetchSucsess)
-    .then(data => console.log(data));
   refs.cardsList.innerHTML = '';
 };
 
-const loadTrendihgNews = () => {
+const loadTrendingNews = () => {
   refs.cardsList.innerHTML = '';
-  apiservise.TrenringNews().then(fetchSucsess);
+  apiservise.TrendingNews().then(fetchSucsess);
 };
 
 refs.dropDownMenu.addEventListener('click', dropDownMenu);
 refs.searchForm.addEventListener('submit', submitForm);
-refs.trendingNewsBtn.addEventListener('click', loadTrendihgNews);
-loadTrendihgNews();
+refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
+loadTrendingNews();
