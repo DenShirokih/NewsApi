@@ -10,31 +10,31 @@ const dropDownMenu = event => {
   switch (categoriesValue) {
     case 'sports':
       refs.cardsList.innerHTML = '';
-      apiservise.SportNews().then(fetchSucsess);
+      apiservise.sportNews().then(fetchSucsess);
       break;
     case 'health':
       refs.cardsList.innerHTML = '';
-      apiservise.HealthNews().then(fetchSucsess);
+      apiservise.healthNews().then(fetchSucsess);
       break;
     case 'general':
       refs.cardsList.innerHTML = '';
-      apiservise.GeneralNews().then(fetchSucsess);
+      apiservise.generalNews().then(fetchSucsess);
       break;
     case 'business':
       refs.cardsList.innerHTML = '';
-      apiservise.BusinessNews().then(fetchSucsess);
+      apiservise.businessNews().then(fetchSucsess);
       break;
     case 'science':
       refs.cardsList.innerHTML = '';
-      apiservise.ScienceNews().then(fetchSucsess);
+      apiservise.scienceNews().then(fetchSucsess);
       break;
     case 'technology':
       refs.cardsList.innerHTML = '';
-      apiservise.TechnologyNews().then(fetchSucsess);
+      apiservise.technologyNews().then(fetchSucsess);
       break;
     case 'entertainment':
       refs.cardsList.innerHTML = '';
-      apiservise.EntertainmentNews().then(fetchSucsess);
+      apiservise.entertainmentNews().then(fetchSucsess);
       break;
   }
 };
