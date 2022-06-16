@@ -5,5 +5,6 @@ const refs = {
   trendingNewsBtn: document.querySelector('.js-trending-news'),
   dropDownMenu: document.querySelector('.js-dropdown-menu__item'),
   scrollUpBtn: document.querySelector('.button-scroll'),
+  spinner: document.querySelector('.lds-roller'),
 };
 export default refs;
