@@ -7,5 +7,6 @@ const refs = {
   scrollUpBtn: document.querySelector('.button-scroll'),
   spinner: document.querySelector('.lds-roller'),
   logoOpenBtn: document.querySelector('.js-logo-open'),
+  clearInput: document.querySelector('.js-clear-input'),
 };
 export default refs;
