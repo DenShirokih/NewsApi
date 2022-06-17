@@ -20,16 +20,6 @@ const submitForm = event => {
     });
 };
 
-const returnMainPage = () => {
-  refs.cardsList.innerHTML = '';
-  apiservise.trendingNews()
-  .then(fetchSucsess)
-    .finally(() => {
-      refs.spinner.classList.add('is-hidden');
-    });
-}
-
-
 const loadTrendingNews = () => {
   refs.spinner.classList.remove('is-hidden');
   refs.cardsList.innerHTML = '';
@@ -44,6 +34,6 @@ const loadTrendingNews = () => {
 refs.dropDownMenu.addEventListener('click', dropDownMenu);
 refs.searchForm.addEventListener('submit', submitForm);
 refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
-refs.logoOpenBtn.addEventListener('click', returnMainPage);
+refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
 loadTrendingNews();
 
