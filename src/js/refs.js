@@ -6,5 +6,6 @@ const refs = {
   dropDownMenu: document.querySelector('.js-dropdown-menu__item'),
   scrollUpBtn: document.querySelector('.button-scroll'),
   spinner: document.querySelector('.lds-roller'),
+  logoOpenBtn: document.querySelector('.js-logo-open'),
 };
 export default refs;
