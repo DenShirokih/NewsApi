@@ -6,8 +6,6 @@ import scrollUp from './scroll-up';
 
 refs.spinner.classList.add('is-hidden');
 const submitForm = event => {
-  // refs.clearInput.classList.remove('is-hidden');
-
   refs.spinner.classList.remove('is-hidden');
   event.preventDefault();
   const form = event.currentTarget;
