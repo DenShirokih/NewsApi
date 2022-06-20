@@ -1,7 +1,11 @@
 {{#each this}}
 <li class="link-gaps">
   <article class="articles">
-    <img src="{{urlToImage}}" alt="articles-news-img" class="card-img" height="179" />
+    {{#if urlToImage}}
+       <img src="{{urlToImage}}" alt="articles-news-img" class="card-img" height="179" />
+    {{else}}
+   <img src="static/img/news1.png" alt="articles-news-img" class="card-img" height="179" />
+    {{/if}}
   <div class="card-position">
         <div class="card-content">
       <h3 class="card-header">{{title}}</h3>

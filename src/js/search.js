@@ -3,8 +3,8 @@ import refs from './refs';
 import dropDownMenu from './drop-down-menu';
 import fetchSucsess from './fetchSucsess';
 import scrollUp from './scroll-up';
+import { visibleReset, clearForm } from './clear-input';
 
-refs.spinner.classList.add('is-hidden');
 const submitForm = event => {
   refs.spinner.classList.remove('is-hidden');
   event.preventDefault();
@@ -13,29 +13,21 @@ const submitForm = event => {
   refs.cardsList.innerHTML = '';
   apiservise
     .newsSearch()
-    .then(fetchSucsess
-    )
+    .then(fetchSucsess)
     .finally(() => {
       refs.spinner.classList.add('is-hidden');
     });
 };
 
-const visibleReset = () => {
-  refs.clearInput.classList.remove('is-hidden');
-}
-
-const clearForm = () => { 
-  refs.searchInput.value = "";
-  if (refs.searchInput.value < 1) {
-    refs.clearInput.classList.add('is-hidden');
-  }
-}
 const loadTrendingNews = () => {
   refs.spinner.classList.remove('is-hidden');
   refs.cardsList.innerHTML = '';
   apiservise
     .trendingNews()
-    .then(fetchSucsess)
+    .then(articles => {
+      fetchSucsess(articles);
+      console.log(apiservise.articlesBase);
+    })
     .finally(() => {
       refs.spinner.classList.add('is-hidden');
     });
@@ -48,4 +40,3 @@ refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
 refs.clearInput.addEventListener('click', clearForm);
 refs.searchInput.addEventListener('click', visibleReset);
 loadTrendingNews();
-
