@@ -4,6 +4,7 @@ import dropDownMenu from './drop-down-menu';
 import fetchSucsess from './fetchSucsess';
 import scrollUp from './scroll-up';
 import { visibleReset, clearForm } from './clear-input';
+import { fullPage } from './full-articles';
 
 const submitForm = event => {
   refs.spinner.classList.remove('is-hidden');
@@ -26,7 +27,6 @@ const loadTrendingNews = () => {
     .trendingNews()
     .then(articles => {
       fetchSucsess(articles);
-      console.log(apiservise.articlesBase);
     })
     .finally(() => {
       refs.spinner.classList.add('is-hidden');
@@ -39,4 +39,5 @@ refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
 refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
 refs.clearInput.addEventListener('click', clearForm);
 refs.searchInput.addEventListener('click', visibleReset);
+refs.cardsList.addEventListener('click', fullPage);
 loadTrendingNews();

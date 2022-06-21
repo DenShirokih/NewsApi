@@ -7,12 +7,14 @@ const KEY = 'e5b74ef942424359907db3fcd031473c';
 const EXCLUDEDOMAINS =
   'excludeDomains=pikabu.ru,news2.ru,smotrim.ru,sputniknews.com,news.google.com,klops.ru,shakin.ru,cnews.ru,sportmail.ru,seonews.ru,mail.ru,yandex.ru,life.ru,kommersant.ru,tass.ru,vesti.ru,ixbt.com,gazeta.ru,exler.ru,news.pn,lenta.ru,rg.ru,vz.ru,meduza.io,livejournal.com,vedomosti.ru,techinsider.ru';
 export default {
-  articlesBase: {},
+  articlesBase: [],
   addToBase(articles) {
-    if (this.page === 1) {
-      this.articlesBase = [];
-    }
-    this.articlesBase.push(articles);
+    this.articlesBase =
+      this.page === 1 ? articles : [...this.articlesBase, ...articles];
+    // if (this.page === 1) {
+    //   this.articlesBase = [];
+    // }
+    // this.articlesBase.push(articles);
   },
   searchArt: '',
   page: 1,
