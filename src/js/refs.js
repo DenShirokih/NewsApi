@@ -8,5 +8,7 @@ const refs = {
   spinner: document.querySelector('.lds-roller'),
   logoOpenBtn: document.querySelector('.js-logo-open'),
   clearInput: document.querySelector('.js-clear-input'),
+  searchBtn: document.querySelector('.search-btn'),
+  keyWordsInput: document.querySelector('.js-content-input'),
 };
 export default refs;
