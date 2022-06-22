@@ -5,7 +5,7 @@ import fetchSucsess from './fetchSucsess';
 import scrollUp from './scroll-up';
 import { visibleReset, clearForm } from './clear-input';
 import { fullPage } from './full-articles';
-import { searchKeyWords } from './fined-keywords'
+import { searchKeyWords } from './fined-keywords';
 
 const submitForm = event => {
   refs.spinner.classList.remove('is-hidden');
@@ -25,7 +25,7 @@ const loadTrendingNews = () => {
   refs.spinner.classList.remove('is-hidden');
   refs.cardsList.innerHTML = '';
   apiservise
-    .trendingNews()
+    .categoriesNews('general')
     .then(articles => {
       fetchSucsess(articles);
     })
@@ -39,7 +39,7 @@ refs.searchForm.addEventListener('submit', submitForm);
 refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
 refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
 refs.clearInput.addEventListener('click', clearForm);
-refs.searchBtn.addEventListener('click', searchKeyWords); 
+refs.searchBtn.addEventListener('click', searchKeyWords);
 refs.searchInput.addEventListener('click', visibleReset);
 refs.cardsList.addEventListener('click', fullPage);
 loadTrendingNews();
