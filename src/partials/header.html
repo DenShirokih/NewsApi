@@ -5,7 +5,9 @@
         <a href="#newsapp" class="site-navigation__item link js-logo-open">News App</a>
       </h2>
       <form class="site-navigation-form search-form-js">
-        <img class="site-navigation__img" src="/img/icons/search.svg" alt="" />
+        <label class="search-string-checked" for="checked">
+          <img class="site-navigation__img search-btn" src="/img/icons/search.svg" alt="" />
+        </label>
         <input
           class="site-navigation__input js-input"
           type="text"
@@ -14,6 +16,7 @@
           placeholder="Type something to start search"
         />
         <input class="search-string" type="checkbox" id="checked"/>
+        
         <label class="search-string-checked" for="checked">
           <img
             class="search-string__img js-clear-input is-hidden"
@@ -24,6 +27,7 @@
         </label>
         <!-- <button type="submit" class="btn-submit"></button> -->
       </form>
+      <input type="text" class="js-content-input is-hidden" placeholder="enter a search term" />
     </div>
     <div class="burger-menu">
       <input class="burger-checkbox" type="checkbox" id="burger" />

@@ -2,6 +2,7 @@ import './styles/index.scss';
 import './js/api-servise';
 import './js/search';
 import './js/dayjs';
+import './js/fined-keywords';
 
 // const users = [
 //   { id: '000', name: 'Mango', isActive: true },
