@@ -3,6 +3,7 @@ import './js/api-servise';
 import './js/search';
 import './js/dayjs';
 import './js/fined-keywords';
+import './js/actual-page';
 
 // const users = [
 //   { id: '000', name: 'Mango', isActive: true },
