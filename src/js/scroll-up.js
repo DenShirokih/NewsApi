@@ -1,10 +1,10 @@
 import refs from './refs';
 
 const scrollUp = () => {
-    window.scrollTo({
+  window.scrollTo({
     top: 10,
-    behavior: "smooth"
-  })
-}
+    behavior: 'smooth',
+  });
+};
 refs.scrollUpBtn.addEventListener('click', scrollUp);
 export default scrollUp;
