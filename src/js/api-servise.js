@@ -19,21 +19,6 @@ export default {
   searchArt: '',
   page: 1,
   isLoading: false,
-  trendingNews() {
-    refs.spinner.classList.remove('is-hidden');
-    const filterNews = `top-headlines?country=ua&apiKey=${KEY}&pageSize=7&page=${this.page}`;
-    return axios
-      .get(`${filterNews}`)
-      .then(articles => {
-        const newArticles = createDate(articles);
-        this.addToBase(newArticles);
-        return newArticles;
-      })
-      .finally(() => {
-        refs.spinner.classList.add('is-hidden');
-        this.isLoading = false;
-      });
-  },
   newsSearch() {
     const filter = `everything?${EXCLUDEDOMAINS}&q=${this.query}&pageSize=7
     &page=${this.page}&searchIn=title,description&sortBy=publishedAt&apiKey=${KEY}`;
