@@ -11,20 +11,18 @@ export default {
   addToBase(articles) {
     this.articlesBase =
       this.page === 1 ? articles : [...this.articlesBase, ...articles];
-    // if (this.page === 1) {
-    //   this.articlesBase = [];
-    // }
-    // this.articlesBase.push(articles);
   },
   searchArt: '',
   page: 1,
   isLoading: false,
   newsSearch() {
+    this.isLoading = true;
     const filter = `everything?${EXCLUDEDOMAINS}&q=${this.query}&pageSize=7
     &page=${this.page}&searchIn=title,description&sortBy=publishedAt&apiKey=${KEY}`;
     return axios
       .get(`${filter}`)
       .then(articles => {
+        this.page += 1;
         const newArticles = createDate(articles);
         this.addToBase(newArticles);
         return newArticles;
@@ -34,16 +32,19 @@ export default {
       });
   },
   categoriesNews(nameCategory) {
+    this.isLoading = true;
     refs.spinner.classList.remove('is-hidden');
     const filterNews = `top-headlines?country=ua&category=${nameCategory}&apiKey=${KEY}&pageSize=7&page=${this.page}`;
     return axios
       .get(`${filterNews}`)
       .then(articles => {
+        this.page += 1;
         const newArticles = createDate(articles);
         this.addToBase(newArticles);
         return newArticles;
       })
       .finally(() => {
+        console.log(this.articlesBase);
         refs.spinner.classList.add('is-hidden');
         this.isLoading = false;
       });

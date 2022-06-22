@@ -3,6 +3,7 @@ import refs from './refs';
 import fetchSucsess from './fetchSucsess';
 
 const dropDownMenu = event => {
+  apiservise.resetPage();
   if (event.target.nodeName !== 'A') {
     return;
   }

@@ -10,5 +10,6 @@ const refs = {
   clearInput: document.querySelector('.js-clear-input'),
   searchBtn: document.querySelector('.search-btn'),
   keyWordsInput: document.querySelector('.js-content-input'),
+  observerDiv: document.querySelector('.observer'),
 };
 export default refs;
