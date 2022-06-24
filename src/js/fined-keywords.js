@@ -1,34 +1,33 @@
 import Mark from 'mark.js';
-import refs from './refs';
+import refs from './refs'
+import { APP_PAGES, pageService } from './actual-page';
+import {clearForm} from './clear-input'
 
 const content = new Mark(document.querySelector('.js-content'));
-const keywordInput = document.querySelector('.js-content-input');
 function performMark() {
-  const keyword = keywordInput.value;
-  const options = {
+  if (pageService.currentPage === APP_PAGES.newsDetails) {  
+    const keyword = refs.searchInput.value;
+    const options = {
     accuracy: {
-      value: 'exactly',
+      value: 'partially',
       limiters: [',', '.'],
     },
-    done: function (counter) {
-      console.log(counter);
+    done: function (counter) { 
+      if (refs.searchInput.value.length === 0) {
+        refs.finedTotalWords.innerHTML = '';
+        refs.finedTotalWords.classList.add('is-hidden');
+      } else {
+        refs.finedTotalWords.classList.remove('is-hidden');  
+        refs.finedTotalWords.innerHTML = `<p>found : ${counter}</p>`;
+      }
     },
-  };
+  }; 
 
   content.unmark({
     done: function () {
       content.mark(keyword, options);
     },
   });
-}
-keywordInput.addEventListener('input', performMark);
-
-const searchKeyWords = () => {
-  refs.keyWordsInput.classList.remove('is-hidden');
-};
-
-refs.keyWordsInput.addEventListener('blur', () => {
-  refs.keyWordsInput.classList.add('is-hidden');
-});
-
-export { searchKeyWords };
+  };
+  };
+export { performMark };
