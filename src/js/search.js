@@ -39,8 +39,6 @@ const loadTrendingNews = () => {
     });
 };
 
-io.observe(refs.observerDiv);
-
 refs.dropDownMenu.addEventListener('click', dropDownMenu);
 refs.searchForm.addEventListener('submit', submitForm);
 refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
@@ -50,3 +48,4 @@ refs.searchBtn.addEventListener('click', searchKeyWords);
 refs.searchInput.addEventListener('click', visibleReset);
 refs.cardsList.addEventListener('click', fullPage);
 loadTrendingNews();
+io.observe(refs.observerDiv);
