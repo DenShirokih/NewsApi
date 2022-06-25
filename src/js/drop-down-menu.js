@@ -1,8 +1,10 @@
 import apiservise from './api-servise';
 import refs from './refs';
 import fetchSucsess from './fetchSucsess';
+import { clearForm } from './clear-input';
 
 const dropDownMenu = event => {
+  clearForm();
   apiservise.resetPage();
   if (event.target.nodeName !== 'A') {
     return;
