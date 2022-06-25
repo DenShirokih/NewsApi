@@ -16,7 +16,6 @@
   width: 50px;
   height: 50px;
   z-index: 1;
-  margin-bottom: 30px;
   @media (min-width: 768px) {
     width: 30px;
     height: 30px;
@@ -59,9 +58,11 @@ input[type='checkbox']:checked {
   content: '';
   height: 2px;
   width: 50px;
-  top: 7px;
+  top:7px;
+  left: 0;
   background: #000;
   @media (min-width: 768px) {
+  
     width: 18px;
   }
 }
@@ -72,8 +73,34 @@ input[type='checkbox']:checked {
   height: 2px;
   width: 50px;
   bottom: 7px;
+  left: 0;
   background: #000;
   @media (min-width: 768px) {
+    
     width: 18px;
+  }
+}
+
+.sidebar-expansion-panel{
+  @media (min-width: 768px) {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+}
+
+
+
+.sidebar-expansion-panel__expand-btn {
+  padding: to-rem(8);
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-color);
+  outline: transparent;
+  transform: rotate(0);
+  transition: transform var(--slide-transition);
+  @media (min-width: 768px) {
+    padding: 0;
   }
 }

@@ -16,10 +16,10 @@
   @media (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   @media (min-width: 1140px) {
-    justify-content: space-between;
+    
   }
 }
 

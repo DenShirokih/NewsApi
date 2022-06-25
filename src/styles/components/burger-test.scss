@@ -1,0 +1,38 @@
+.sidebar-expansion-panel {
+  padding: to-rem(24) 0;
+  
+}
+
+.sidebar-expansion-panel__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-expansion-panel__expand-btn {
+  display: inline-flex;
+  padding: to-rem(8);
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-color);
+  outline: transparent;
+  transform: rotate(0);
+  transition: transform var(--slide-transition);
+
+  &--rotate {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar-expansion-panel__content {
+  max-height: 0;
+  padding-top: 0;
+  overflow-y: hidden;
+  transition: max-height var(--slide-transition),
+    padding-top var(--slide-transition);
+
+  // &--expanded {
+  //   max-height: <ВЫСОТА КОНТЕНТА КНОПОК>;
+  //   padding-top: to-rem(24);
+  // }
+}
