@@ -1,7 +1,7 @@
 import Mark from 'mark.js';
 import refs from './refs'
 import { APP_PAGES, pageService } from './actual-page';
-import {clearForm} from './clear-input'
+// import {clearForm} from './clear-input'
 
 const content = new Mark(document.querySelector('.js-content'));
 function performMark() {
@@ -13,7 +13,7 @@ function performMark() {
       limiters: [',', '.'],
     },
     done: function (counter) { 
-      if (refs.searchInput.value.length === 0) {
+      if (keyword.length === 0) {
         refs.finedTotalWords.innerHTML = '';
         refs.finedTotalWords.classList.add('is-hidden');
       } else {
@@ -28,6 +28,10 @@ function performMark() {
       content.mark(keyword, options);
     },
   });
+  } else { 
+    refs.finedTotalWords.innerHTML = '';
+    refs.finedTotalWords.classList.add('is-hidden'); 
+    // pageService.currentPage !== APP_PAGES.newsDetails
   };
   };
 export { performMark };

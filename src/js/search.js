@@ -24,18 +24,17 @@ const submitForm = event => {
       .finally(() => {
         refs.spinner.classList.add('is-hidden');
       });
-    
   } else {
       event.preventDefault();
   }
 };
 
 const loadTrendingNews = () => {
+    clearForm();
+    pageService.setCurrentPage(APP_PAGES.homePage);
     apiservise.resetPage();
     refs.spinner.classList.remove('is-hidden');
     refs.cardsList.innerHTML = '';
-    pageService.setCurrentPage(APP_PAGES.homePage);
-    console.log(pageService.currentPage);
     apiservise
       .categoriesNews('general')
       .then(articles => {
@@ -45,7 +44,6 @@ const loadTrendingNews = () => {
         refs.spinner.classList.add('is-hidden');
       });
   };
-
   io.observe(refs.observerDiv);
 
   refs.dropDownMenu.addEventListener('click', dropDownMenu);
@@ -58,4 +56,3 @@ const loadTrendingNews = () => {
   refs.cardsList.addEventListener('click', fullPage);
   
   loadTrendingNews();
-
