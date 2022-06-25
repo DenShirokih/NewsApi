@@ -29,47 +29,59 @@
       </form>
       <input type="text" class="js-content-input is-hidden" placeholder="enter a search term" />
     </div>
-    <div class="burger-menu">
-      <input class="burger-checkbox" type="checkbox" id="burger" />
-      <label for="burger" class="burger">
-        <span class="burger__item first"></span>
-        <span class="burger__item second"></span>
-      </label>
-      <ul class="site-navigation-menu">
-        <li class="site-navigation__categories">
-          <a href="" class="site-navigation__link link">Categories </a>
-          <div class="dropdown-menu">
-            <ul class="dropdown-menu__item js-dropdown-menu__item">
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="sports">Sports</a>
+    <div class="sidebar-expansion-panel">
+      <div class="sidebar-expansion-panel__heading">
+        <button
+          class="sidebar-expansion-panel__expand-btn
+            sidebar-expansion-panel__expand-btn--rotate"
+          type="button">
+          <div class="burger-menu">
+            <input class="burger-checkbox" type="checkbox" id="burger" />
+            <label for="burger" class="burger">
+              <span class="burger__item first"></span>
+              <span class="burger__item second"></span>
+            </label>
+            <ul class="site-navigation-menu">
+              <li class="site-navigation__categories">
+                <a href="" class="site-navigation__link link">Categories </a>
+                <div class="dropdown-menu">
+                  <ul class="dropdown-menu__item js-dropdown-menu__item">
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="sports">Sports</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="health">Health</a>
+                    </li>
+                    <li class="dropdown-menu__list">  
+                      <a href="#" class="dropdown-menu__link link" data-value="general">General</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="business">Business</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="science">Science</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="technology">Technology</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="entertainment">Entertainment</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="health">Health</a>
-              </li>
-              <li class="dropdown-menu__list">  
-                <a href="#" class="dropdown-menu__link link" data-value="general">General</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="business">Business</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="science">Science</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="technology">Technology</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="#" class="dropdown-menu__link link" data-value="entertainment">Entertainment</a>
+              <li class="site-navigation__trending">
+                <a href="#" class="site-navigation__link link js-trending-news">
+                  Trending news
+                </a>
               </li>
             </ul>
           </div>
-        </li>
-        <li class="site-navigation__trending">
-          <a href="#" class="site-navigation__link link js-trending-news">
-            Trending news
-          </a>
-        </li>
-      </ul>
+            </button>
+      </div>
+      <div class= "sidebar-expansion-panel__content sidebar-expansion-panel__content--expanded">
+        <!-- {/* твои кнопки  */} -->
+      </div>
     </div>
   </nav>
 </header>
