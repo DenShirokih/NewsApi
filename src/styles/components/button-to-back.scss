@@ -1,0 +1,12 @@
+
+
+.button-to-back{
+    &__item{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+    }
+}
