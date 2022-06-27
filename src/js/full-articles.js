@@ -4,7 +4,7 @@ import createCardNews from './news-markup';
 import openedCard from '../templates/opened-article.hbs?raw';
 import { APP_PAGES, pageService } from './actual-page';
 import { performMark } from './fined-keywords';
- 
+
 const fullPage = event => {
   const elements = event.path.find(element =>
     [...element.classList].includes('js-article-card'),
