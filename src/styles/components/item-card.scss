@@ -11,7 +11,11 @@
 .card-img {
   height: 150px;
   margin-bottom: 18px;
-}
+  @media (min-width: 1140px){
+ 
+  }
+} 
+
 
 .card-content {
   display: flex;
@@ -19,7 +23,6 @@
   max-height: 203px;
   padding-left: 16px;
   max-width: 280px;
-  // flex: 1 1 auto;
 }
 
 .card-header {
