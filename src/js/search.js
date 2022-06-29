@@ -10,7 +10,6 @@ import { io } from './pagination';
 import { performMark } from './fined-keywords';
 
 const submitForm = event => {
-
   if (pageService.currentPage === APP_PAGES.homePage) {
     apiservise.resetPage();
     refs.spinner.classList.remove('is-hidden');
@@ -25,34 +24,35 @@ const submitForm = event => {
         refs.spinner.classList.add('is-hidden');
       });
   } else {
-      event.preventDefault();
+    event.preventDefault();
   }
 };
 
 const loadTrendingNews = () => {
-    clearForm();
-    pageService.setCurrentPage(APP_PAGES.homePage);
-    apiservise.resetPage();
-    refs.spinner.classList.remove('is-hidden');
-    refs.cardsList.innerHTML = '';
-    apiservise
-      .categoriesNews('general')
-      .then(articles => {
-        fetchSucsess(articles);
-      })
-      .finally(() => {
-        refs.spinner.classList.add('is-hidden');
-      });
-  };
-  io.observe(refs.observerDiv);
+  refs.backBtn.classList.add('is-hidden');
+  clearForm();
+  pageService.setCurrentPage(APP_PAGES.homePage);
+  apiservise.resetPage();
+  refs.spinner.classList.remove('is-hidden');
+  refs.cardsList.innerHTML = '';
+  apiservise
+    .categoriesNews('general')
+    .then(articles => {
+      fetchSucsess(articles);
+    })
+    .finally(() => {
+      refs.spinner.classList.add('is-hidden');
+    });
+};
+io.observe(refs.observerDiv);
 
-  refs.dropDownMenu.addEventListener('click', dropDownMenu);
-  refs.searchForm.addEventListener('submit', submitForm);
-  refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
-  refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
-  refs.clearInput.addEventListener('click', clearForm);
-  refs.searchInput.addEventListener('input', performMark);
-  refs.searchInput.addEventListener('click', visibleReset);
-  refs.cardsList.addEventListener('click', fullPage);
-  
-  loadTrendingNews();
+refs.dropDownMenu.addEventListener('click', dropDownMenu);
+refs.searchForm.addEventListener('submit', submitForm);
+refs.trendingNewsBtn.addEventListener('click', loadTrendingNews);
+refs.logoOpenBtn.addEventListener('click', loadTrendingNews);
+refs.clearInput.addEventListener('click', clearForm);
+refs.searchInput.addEventListener('input', performMark);
+refs.searchInput.addEventListener('click', visibleReset);
+refs.cardsList.addEventListener('click', fullPage);
+
+loadTrendingNews();

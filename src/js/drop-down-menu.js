@@ -4,6 +4,7 @@ import fetchSucsess from './fetchSucsess';
 import { clearForm } from './clear-input';
 
 const dropDownMenu = event => {
+  refs.backBtn.classList.add('is-hidden');
   clearForm();
   apiservise.resetPage();
   if (event.target.nodeName !== 'A') {
