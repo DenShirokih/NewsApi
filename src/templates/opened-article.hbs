@@ -2,16 +2,17 @@
     {{#if urlToImage}}
     <img class="article-img" src="{{urlToImage}}" alt="">
     {{else}}
-     <img class="article-img" src="static/img/news1.png" alt=""> 
+     <img class="article-img" src="/img/news1.png" alt=""> 
     {{/if}}
     <div class="article-content">
         <div class="article-header">
             <h2>{{title}}</h2>
             <div class="article-card__time">
-                <p class="article-author">{{author}}</p>
+                <a href="{{url}}" class="article-author">{{author}}</a>
                 <p class="article-date">{{dateAfterPublication}}</p>
             </div>
         <div class="article-text">
+            <p>{{description}}</p>
             <p>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
             eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam

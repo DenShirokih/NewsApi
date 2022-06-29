@@ -33,7 +33,7 @@ export default {
   },
   categoriesNews(nameCategory) {
     this.isLoading = true;
-    refs.spinner.classList.remove('is-hidden');
+    // refs.spinner.classList.remove('is-hidden');
     const filterNews = `top-headlines?country=ua&category=${nameCategory}&apiKey=${KEY}&pageSize=7&page=${this.page}`;
     return axios
       .get(`${filterNews}`)

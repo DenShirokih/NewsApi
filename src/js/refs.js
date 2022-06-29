@@ -12,5 +12,6 @@ const refs = {
   keyWordsInput: document.querySelector('.js-content-input'),
   observerDiv: document.querySelector('.observer'),
   finedTotalWords: document.querySelector('.totalWords'),
+  backBtn: document.querySelector('.button-to-back-js'),
 };
 export default refs;

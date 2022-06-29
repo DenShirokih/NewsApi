@@ -22,7 +22,7 @@ const onEntry = entries => {
   });
 };
 const options = {
-  rootMargin: '400px',
+  rootMargin: '200px',
 };
 const io = new IntersectionObserver(onEntry, options);
 export { io };
