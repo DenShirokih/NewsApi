@@ -13,5 +13,6 @@ const refs = {
   observerDiv: document.querySelector('.observer'),
   finedTotalWords: document.querySelector('.totalWords'),
   backBtn: document.querySelector('.button-to-back-js'),
+  listSearch: document.querySelector('.list-js'),
 };
 export default refs;
