@@ -10,7 +10,7 @@ export default {
   articlesBase: [],
   addToBase(articles) {
     this.articlesBase =
-      this.page === 1 ? articles : [...this.articlesBase, ...articles];
+      this.page === 2 ? articles : [...this.articlesBase, ...articles];
   },
   searchArt: '',
   page: 1,
