@@ -14,5 +14,6 @@ const refs = {
   finedTotalWords: document.querySelector('.totalWords'),
   backBtn: document.querySelector('.button-to-back-js'),
   listSearch: document.querySelector('.list-js'),
+  listElemSearch: document.querySelectorAll('.list-js li'),
 };
 export default refs;

@@ -8,6 +8,7 @@ const clearForm = () => {
   if (refs.searchInput.value < 1) {
     refs.clearInput.classList.add('is-hidden');
     refs.finedTotalWords.classList.add('is-hidden');
+    refs.listSearch.classList.add('is-hidden');
   }
 };
 
