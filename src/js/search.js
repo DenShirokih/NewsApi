@@ -10,10 +10,15 @@ import { io } from './pagination';
 import { performMark } from './fined-keywords';
 import {fuzzyInput} from './fuze-search';
 
-// function addFuzeKey(event) {
-//   console.log(event.currentTarget);
-// };
+
+
+const addWordInInput = (event) => {
+  console.dir(event.currentTarget.innerText);
+  refs.searchInput.value = event.target.innerText;
+  refs.listSearch.classList.add('is-hidden');
   
+};
+
 
 const submitForm = event => {
   if (pageService.currentPage === APP_PAGES.homePage) {
@@ -62,5 +67,7 @@ refs.searchInput.addEventListener('input', fuzzyInput);
 refs.searchInput.addEventListener('click', visibleReset);
 refs.cardsList.addEventListener('click', fullPage);
 // refs.listElemSearch.addEventListener('click', addFuzeKey);
+// refs.fuzeListItem.addEventListener('click', addFuzeKey);
+refs.listSearch.addEventListener('click', addWordInInput);
 
 loadTrendingNews();

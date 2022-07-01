@@ -10,7 +10,6 @@ const options = {
 const fuse = new Fuse(list, options)
 
 function fuzzyInput() {
-    // pageService.setCurrentPage(APP_PAGES.homePage);
     if (pageService.getIsHomePage()) {
         const results = fuse.search(refs.searchInput.value);
         const itemResult = results.map(result =>`<li class = "fuze__link">${result.item}</li>`)
