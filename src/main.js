@@ -7,3 +7,4 @@ import './js/actual-page';
 import './js/pagination';
 import './js/local-storage';
 import './js/btn-to-back';
+import './js/fuze-search';
