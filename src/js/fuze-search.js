@@ -13,7 +13,7 @@ function fuzzyInput() {
     // pageService.setCurrentPage(APP_PAGES.homePage);
     if (pageService.getIsHomePage()) {
         const results = fuse.search(refs.searchInput.value);
-        const itemResult = results.map(result =>`<li>${result.item}</li>`)
+        const itemResult = results.map(result =>`<li class = "fuze__link">${result.item}</li>`)
         if (refs.searchInput.value !== '') {
             refs.listSearch.classList.remove('is-hidden');
             refs.listSearch.innerHTML = itemResult.join('');
