@@ -8,3 +8,4 @@ import './js/pagination';
 import './js/local-storage';
 import './js/btn-to-back';
 import './js/fuze-search';
+import './js/list-for-fuse-search';

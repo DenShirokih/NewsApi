@@ -13,7 +13,7 @@ import {fuzzyInput} from './fuze-search';
 
 
 const addWordInInput = (event) => {
-  console.dir(event.currentTarget.innerText);
+  // console.dir(event.currentTarget.innerText);
   refs.searchInput.value = event.target.innerText;
   refs.listSearch.classList.add('is-hidden');
   
