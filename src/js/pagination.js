@@ -10,7 +10,7 @@ const onEntry = entries => {
       if (entry.isIntersecting && !apiservise.isLoading) {
         refs.spinner.classList.remove('is-hidden');
         apiservise
-          .categoriesNews('general')
+          .callApi()
           .then(articles => {
             createCardNews(itemCard, articles);
           })

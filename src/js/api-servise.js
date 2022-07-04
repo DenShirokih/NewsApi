@@ -15,28 +15,18 @@ export default {
   searchArt: '',
   page: 1,
   isLoading: false,
-  newsSearch() {
-    this.isLoading = true;
-    const filter = `everything?${EXCLUDEDOMAINS}&q=${this.query}&pageSize=7
-    &page=${this.page}&searchIn=title,description&sortBy=publishedAt&apiKey=${KEY}`;
-    return axios
-      .get(`${filter}`)
-      .then(articles => {
-        this.page += 1;
-        const newArticles = createDate(articles);
-        this.addToBase(newArticles);
-        return newArticles;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+  currentRequest: '',
+  setCurrentRequest({ isNewsSearch, nameCategory }) {
+    this.currentRequest = isNewsSearch
+      ? `everything?${EXCLUDEDOMAINS}&q=${this.query}&pageSize=7
+    &searchIn=title,description&sortBy=publishedAt&apiKey=${KEY}`
+      : `top-headlines?country=ua&category=${nameCategory}&apiKey=${KEY}&pageSize=7`;
   },
-  categoriesNews(nameCategory) {
+  callApi() {
     this.isLoading = true;
-    // refs.spinner.classList.remove('is-hidden');
-    const filterNews = `top-headlines?country=ua&category=${nameCategory}&apiKey=${KEY}&pageSize=7&page=${this.page}`;
+    const query = `${this.currentRequest}&page=${this.page}`;
     return axios
-      .get(`${filterNews}`)
+      .get(query)
       .then(articles => {
         this.page += 1;
         const newArticles = createDate(articles);
@@ -44,10 +34,17 @@ export default {
         return newArticles;
       })
       .finally(() => {
-        console.log(this.articlesBase);
         refs.spinner.classList.add('is-hidden');
         this.isLoading = false;
       });
+  },
+  newsSearch() {
+    this.setCurrentRequest({ isNewsSearch: true });
+    return this.callApi().then(data => data);
+  },
+  categoriesNews(nameCategory) {
+    this.setCurrentRequest({ isNewsSearch: false, nameCategory });
+    return this.callApi().then(data => data);
   },
   resetPage() {
     this.page = 1;
