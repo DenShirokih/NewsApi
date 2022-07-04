@@ -1,7 +1,7 @@
 import apiservise from './api-servise';
 import refs from './refs';
 import itemCard from '../templates/item-card.hbs?raw';
-import createCardNews from './news-markup';
+import { createCardNews } from './news-markup';
 import { APP_PAGES, pageService } from './actual-page';
 
 const onEntry = entries => {
