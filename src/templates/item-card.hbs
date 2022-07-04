@@ -18,6 +18,9 @@
         <a href="#">Read more</a>
       </div>
   </div>
+      {{#if isViewedAgo}}
+       <div>Просмотрено {{isViewedAgo}}</div>
+    {{/if}}
   </article>
 </li> 
 {{/each}}
