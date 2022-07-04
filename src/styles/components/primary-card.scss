@@ -1,7 +1,9 @@
 .primary-card {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  transition-property: transform,box-shadow;
+  transition-duration: 300ms;
+  margin: 0 auto;
+  margin-bottom: 30px;
   @media (min-width: 1140px) {
     display: block;
   }
@@ -44,6 +46,13 @@
     padding-bottom: 24px;
   }
 }
+
+
+.primary-card:hover{
+  transform: translate(-8px, -8px);
+  box-shadow: 8px 8px 5px #b3b3b3;
+}
+
 
 .primary-articles {
   max-width: 350px;
