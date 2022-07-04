@@ -6,4 +6,8 @@ const createCardNews = (sample, value) => {
   refs.cardsList.insertAdjacentHTML('beforeend', markup);
 };
 
-export default createCardNews;
+const openCardNews = (sample, value) => {
+  const markup = handlebars.compile(sample)(value);
+  refs.openCards.insertAdjacentHTML('beforeend', markup);
+};
+export { createCardNews, openCardNews };

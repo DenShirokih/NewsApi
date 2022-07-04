@@ -1,6 +1,6 @@
 import apiservise from './api-servise';
 import refs from './refs';
-import createCardNews from './news-markup';
+import { openCardNews } from './news-markup';
 import openedCard from '../templates/opened-article.hbs?raw';
 import { APP_PAGES, pageService } from './actual-page';
 import { performMark } from './fined-keywords';
@@ -15,7 +15,7 @@ const fullPage = event => {
     articles => articles.title === datasetTitle,
   );
   refs.cardsList.innerHTML = '';
-  createCardNews(openedCard, needArticles);
+  openCardNews(openedCard, needArticles);
   pageService.setCurrentPage(APP_PAGES.newsDetails);
 };
 export { fullPage };

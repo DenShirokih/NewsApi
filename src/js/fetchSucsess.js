@@ -1,4 +1,4 @@
-import createCardNews from './news-markup';
+import { createCardNews } from './news-markup';
 import primaryCard from '../templates/primary-card.hbs?raw';
 import itemCard from '../templates/item-card.hbs?raw';
 import notFound from '../templates/not-found.hbs?raw';

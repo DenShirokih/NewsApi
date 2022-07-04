@@ -1,5 +1,6 @@
 const refs = {
   cardsList: document.querySelector('.js-cards__list'),
+  openCards:document.querySelector('.openCards'),
   searchForm: document.querySelector('.search-form-js'),
   searchInput: document.querySelector('.js-input'),
   trendingNewsBtn: document.querySelector('.js-trending-news'),

@@ -8,7 +8,21 @@
     max-width: 1020px;
   }
 }
+.openCards{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    @media (min-width: 768px) {
+      
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    @media (min-width: 1140px) {
 
+    }
+}
 .cards__list {
   display: flex;
   flex-direction: column;
