@@ -1,5 +1,7 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
+import config from '../const/config';
+import { getFromLS } from '../helpers/ls-helper';
 import refs from './refs';
 axios.defaults.baseURL = 'https://newsapi.org/v2/';
 const KEY = '40e6c2e8a4634fe2a853fc33b21167f5';
@@ -59,10 +61,19 @@ export default {
 
 const createDate = response => {
   const articles = response.data.articles;
-  const articlesWithNewDate = articles.map(article => ({
-    ...article,
-    dateAfterPublication: dayjs().to(article.publishedAt),
-  }));
+  const dataFromLS = getFromLS(config.LOCAL_STORAGE_READ_NEWS_KEY) || [];
+
+  const articlesWithNewDate = articles.map(article => {
+    const savedArticle = dataFromLS.find(
+      viewedNews => viewedNews.title === article.title,
+    );
+
+    return {
+      ...article,
+      dateAfterPublication: dayjs().to(article.publishedAt),
+      isViewedAgo: savedArticle ? dayjs().to(savedArticle.date) : null,
+    };
+  });
   return articlesWithNewDate;
 };
 
