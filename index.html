@@ -12,13 +12,22 @@
   </head>
   <body>
     <div class="container">
-      <!-- Так добавляются фрагменты в главные HTML-файлы страниц. Находятся в папке src/partials -->
       {{> header }}
-      {{> item-card}}
-      <div class="container-cards">
-        <ul class="cards__list">
-        </ul>
+
+      {{> button-to-back}}
+      {{> preloader}}
+      <div class="container-cards js-content">
+        <ul class="cards__list js-cards__list">
+        </ul> 
+        <div class="openCards">
+          
+        </div>
       </div>
+      {{> button-scroll-to-top}}
+
+
     </div>
+    <div class="observer"></div>
+    {{> footer}}
   </body>
 </html>

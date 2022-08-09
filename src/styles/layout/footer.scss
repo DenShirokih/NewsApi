@@ -1,0 +1,23 @@
+.footer-wrapper {
+  width: 100%;
+  border-top: 1px solid map-get($colors, border-footer-color);
+  height: 60px;
+}
+.footer {
+  line-height: 60px;
+}
+.copiright {
+  text-align: center;
+  font-weight: $secondary-fw;
+  font-size: $primary-fs;
+  color: map-get($colors, thridly-color);
+  @media (min-width: 1140px) {
+    text-align: start;
+  }
+}
+.copiright-logo {
+  font-weight: $bold-fw;
+  font-size: $last-one-fs;
+  color: map-get($colors, thridly-color);
+  text-decoration: none;
+}

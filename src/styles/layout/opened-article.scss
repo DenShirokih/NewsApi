@@ -1,0 +1,41 @@
+.article-img{
+    max-width: 100%;
+    margin-bottom: 61px;
+}
+.article-content{
+    max-width: 768px;
+    margin:auto;
+}
+.article-header h2{
+    font-size: $article-header-h2-fs;
+    color:#2D3748;
+    margin-bottom: 35px;
+    line-height: 40px;
+    
+}
+.article-card__time{
+    display: flex;
+    padding-bottom: 30px;
+    margin-bottom: 37px;
+    border-bottom: 1px solid map-get($colors, border-color);
+}
+.article-author{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: $article-author-fs;
+    line-height: 22px;
+    color: map-get($colors, article-author);
+    padding-right: 25px;
+
+}
+.article-date{
+    font-style: normal;
+    font-weight: 400;
+    font-size: $article-author-fs;
+    line-height: 22px;
+}
+.article-text p {
+    padding-bottom: 58px;
+    font-size: $last-one-fs;
+    line-height: 19px;
+}

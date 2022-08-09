@@ -10,6 +10,10 @@ $colors: (
   thridly-color: #000000,
   last-one-color: #f2f2f2,
   link-color: #2f80ed,
+  white-color: #ffffff,
+  border-footer-color: #e8e8e8,
+  border-color: #e5e5e5,
+  article-author: #2d3748,
 );
 
 // font-size
@@ -18,9 +22,17 @@ $primary-fs: 14px;
 $secondary-fs: 20px;
 $thirdly-fs: 12px;
 $last-one-fs: 16px;
+$article-author-fs: 18px;
+$article-header-h2-fs: 45px;
 
 // line-height
 
 // bck-gradient
 
 // font-wieght
+
+$primary-fw: 300;
+$secondary-fw: 400;
+$bold-fw: 700;
+
+

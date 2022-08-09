@@ -1,0 +1,26 @@
+{{#each this}}
+<li class="link-gaps js-article-card" data-title="{{title}}">
+  <article class="articles">
+    {{#if urlToImage}}
+       <img src="{{urlToImage}}" alt="articles-news-img" class="card-img" height="179" />
+    {{else}}
+   <img src="/img/news1.png" alt="articles-news-img" class="card-img" height="179" />
+    {{/if}}
+  <div class="card-position">
+        <div class="card-content">
+      <h3 class="card-header">{{title}}</h3>
+      <p class="card-text">
+       {{{description}}}
+      </p>
+    </div>
+     <div class="card-time ">
+        <p>{{dateAfterPublication}}</p>
+        <a href="#">Read more</a>
+      </div>
+  </div>
+      {{#if isViewedAgo}}
+       <div>Просмотрено {{isViewedAgo}}</div>
+    {{/if}}
+  </article>
+</li> 
+{{/each}}

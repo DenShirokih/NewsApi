@@ -1,23 +1,34 @@
 .burger-menu {
   display: flex;
-  flex-direction: row-reverse;
-  flex-basis: 50%;
+  flex-direction: column;
   align-items: center;
+  @media (min-width: 768px) {
+    flex-basis: 40%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
 
 .burger {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   z-index: 1;
+  @media (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+  }
   &__item {
     position: absolute;
     height: 2px;
-    width: 18px;
-    background: #000;
-    transition: 0.15s all cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    background: map-get($colors, thridly-color);
+    @media (min-width: 768px) {
+      width: 18px;
+    }
   }
 }
 
@@ -46,20 +57,50 @@ input[type='checkbox']:checked {
   position: absolute;
   content: '';
   height: 2px;
-  width: 18px;
-  top: 7px;
+  width: 50px;
+  top:7px;
+  left: 0;
   background: #000;
+  @media (min-width: 768px) {
+  
+    width: 18px;
+  }
 }
 
 .first::before {
   position: absolute;
   content: '';
   height: 2px;
-  width: 18px;
+  width: 50px;
   bottom: 7px;
+  left: 0;
   background: #000;
+  @media (min-width: 768px) {
+    
+    width: 18px;
+  }
 }
 
-#burger:checked ~ .site-navigation-menu {
-  font-size: $primary-fs;
+.sidebar-expansion-panel{
+  @media (min-width: 768px) {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+}
+
+
+
+.sidebar-expansion-panel__expand-btn {
+
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-color);
+  outline: transparent;
+  transform: rotate(0);
+  transition: transform var(--slide-transition);
+  @media (min-width: 768px) {
+    padding: 0;
+  }
 }

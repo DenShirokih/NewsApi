@@ -1,8 +1,9 @@
 @import '/src/styles/normalize';
 
 @import 'helpers/_variables';
-@import 'helpers/_mixins.scss';
-@import 'helpers/_placeholder';
+@import '/src/styles/_mixins';
+@import '/src/styles/_placeholders';
+@import '/src/styles/_media';
 
 // Helpers
 
@@ -13,9 +14,17 @@
 @import './layout/header';
 @import './layout/main';
 @import './layout/footer';
+@import './layout/opened-article.scss';
+@import './layout/preloader.scss';
 
 // Components
 
-// @import './components/team-card';
 @import './components/burger';
+
+@import './components/button-to-back';
 @import './components/item-card';
+@import './components/primary-card';
+@import './components/button';
+
+
+

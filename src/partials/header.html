@@ -2,65 +2,88 @@
   <nav class="site-navigation">
     <div class="site-navigation-aside">
       <h2 class="site-navigation__logo">
-        <a href="#newsapp" class="site-navigation__item link">News App</a>
+        <a href="#newsapp" class="site-navigation__item link js-logo-open">News App</a>
       </h2>
-      <div class="site-navigation-form">
-        <img
-          class="site-navigation__img"
-          src="/static/img/icons/search.svg"
-          alt=""
-        />
+      <form class="site-navigation-form search-form-js">
+        <label class="search-string-checked" for="checked">
+          <img class="site-navigation__img search-btn" src="/img/icons/search.svg" alt="" />
+        </label>
         <input
-          class="site-navigation__input"
+          class="site-navigation__input js-input"
           type="text"
-          name=""
+          name="searchQuery"
           value=""
           placeholder="Type something to start search"
         />
-      </div>
+        <input class="search-string" type="checkbox" id="checked"/>
+        <label class="search-string-checked" for="checked">
+          <img
+            class="search-string__img js-clear-input is-hidden"
+            src="/static/img/icons/checked.svg"
+            alt=""
+            type="reset"
+          />
+        </label>
+        <div class="list-fuzy div-list-js">
+          <ul class="fuze__list  list-js">
+          </ul>
+        </div>
+      </form>
+      <div class="totalWords is-hidden"></div>
     </div>
-    <div class="burger-menu">
-      <input type="checkbox" id="burger" />
-      <label for="burger" class="burger">
-        <span class="burger__item first"></span>
-        <span class="burger__item second"></span>
-      </label>
-      <ul class="site-navigation-menu">
-        <li class="site-navigation__categories">
-          <a href="" class="site-navigation__link link"> Categories </a>
-          <div class="dropdowm-menu">
-            <ul class="dropdown-menu__item">
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Sport</a>
+    <div class="sidebar-expansion-panel">
+      <div class="sidebar-expansion-panel__heading">
+        <button
+          class="sidebar-expansion-panel__expand-btn
+            sidebar-expansion-panel__expand-btn--rotate"
+          type="button">
+          <div class="burger-menu">
+            <input class="burger-checkbox" type="checkbox" id="burger" />
+            <label for="burger" class="burger">
+              <span class="burger__item first"></span>
+              <span class="burger__item second"></span>
+            </label>
+            <ul class="site-navigation-menu">
+              <li class="site-navigation__categories">
+                <a href="" class="site-navigation__link link">Categories </a>
+                <div class="dropdown-menu">
+                  <ul class="dropdown-menu__item js-dropdown-menu__item">
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="sports">Sports</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="health">Health</a>
+                    </li>
+                    <li class="dropdown-menu__list">  
+                      <a href="#" class="dropdown-menu__link link" data-value="general">General</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="business">Business</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="science">Science</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="technology">Technology</a>
+                    </li>
+                    <li class="dropdown-menu__list">
+                      <a href="#" class="dropdown-menu__link link" data-value="entertainment">Entertainment</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">World</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Covid</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Business</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Politics</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Science</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Religion</a>
-              </li>
-              <li class="dropdown-menu__list">
-                <a href="" class="dropdown-menu__link link">Health</a>
+              <li class="site-navigation__trending">
+                <a href="#" class="site-navigation__link link js-trending-news">
+                  Trending news
+                </a>
               </li>
             </ul>
           </div>
-        </li>
-        <li class="site-navigation__trending">
-          <a href="" class="site-navigation__link link"> Trending news </a>
-        </li>
-      </ul>
+            </button>
+      </div>
+      <div class= "sidebar-expansion-panel__content sidebar-expansion-panel__content--expanded">
+        <!-- {/* твои кнопки  */} -->
+      </div>
     </div>
   </nav>
 </header>

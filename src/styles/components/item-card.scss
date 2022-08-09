@@ -1,56 +1,91 @@
 .articles {
-    display: flex;
-    background-color: #FFFFFF;
-    width: 300px;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(192, 189, 189, 0.25);
+  overflow: hidden;
 }
 
 .card-img {
-    width: 300px;
-    height: 179px
-}
+  height: 150px;
+  margin-bottom: 18px;
+  @media (min-width: 1140px){
+  }
+} 
+
 
 .card-content {
-    padding-top: 18px;
-    padding-left: 16px;
-    width: 258px;
+  display: flex;
+  flex-direction: column;
+  max-height: 203px;
+  padding-left: 16px;
+  max-width: 280px;
 }
 
 .card-header {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.2px;
-    color: #2D3748;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: $secondary-fs;
+  line-height: 24px;
+  color: #2d3748;
 }
 
 .card-text {
-    padding-top: 22px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16.94px;
-    color: #718096;
+  font-weight: $secondary-fw;
+  font-size: $primary-fs;
+  line-height: 17px;
+  color: map-get($colors, primary-color);
+  overflow: hidden;
+  max-height: 85px;
+  position: relative;
+}
+
+.card-text::after {
+  content: '';
+  width: 100%;
+  height: 17px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 1)
+  );
 }
 
 .card-time {
-    padding-top: 22px;
-    padding-bottom: 22px;
-    display: flex;
-    justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
 }
 
 .card-time p {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14.52px;
-    color: #718096;
+  font-weight: $secondary-fw;
+  font-size: $thirdly-fs;
+  line-height: 14px;
+  color: #718096;
 }
 
 .card-time a {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14.52px;
-    color: #2D3748;
-    text-decoration: none;
+  font-weight: $bold-fw;
+  font-size: $thirdly-fs;
+  line-height: 1px;
+  color: map-get($colors, article-author);
+  text-decoration: none;
+}
+
+.card-position {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
