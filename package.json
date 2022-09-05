@@ -7,8 +7,8 @@
     "vite",
     "template"
   ],
-  "author": "Oleksandr Kropivnyi <kropivnyy@gmail.com>",
-  "homepage": "https://Kropivnyy.github.io/vite-project-template",
+  "author": "Denis Shyrokih <abcdenis95@gmail.com>",
+  "homepage": "https://denshirokih.github.io/NewsApp/",
   "license": "ISC",
   "scripts": {
     "dev": "vite",
